@@ -1,11 +1,14 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using ShoppingApplication.Services.CouponAPI;
 using ShoppingApplication.Services.CouponAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+//------------------------------------------------------------------------
 
 // conect the database 
 
@@ -14,7 +17,14 @@ builder.Services.AddDbContext<AppDbContext>(
         builder.Configuration.GetConnectionString("DefaultConnection"
         )));
 
+//--------------------------------------------------------------------
 
+// Auto Mappping 
+IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+builder.Services.AddSingleton(mapper);
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+//----------------------------------------------------------------------
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -33,13 +43,16 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+//--------------------------------------------------------------------------------
 ApplyMigration();//  pahal functions eka call kre
+//--------------------------------------------------------------------------------
 app.MapControllers();
 
 app.Run();
 
 
-
+//-------------------------------------------------------------------------------
 
 // Apply Migrations atuomatically
 
@@ -55,3 +68,5 @@ void ApplyMigration()
         }
     }
 }
+
+
