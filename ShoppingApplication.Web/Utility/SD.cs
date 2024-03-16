@@ -9,6 +9,6 @@
             PUT,
             POST,
             DELETE
-        }  
+        }
     }
 }

@@ -15,7 +15,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ShoppingApplication.Services.CouponAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/coupon")]
     [ApiController]
 
     public class CouponAPIController : ControllerBase

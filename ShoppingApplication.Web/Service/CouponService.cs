@@ -1,16 +1,10 @@
-﻿using ShoppingApplication.Services.Web.Models.Dto;
-using ShoppingApplication.Web.Models;
+﻿using ShoppingApplication.Web.Models;
 using ShoppingApplication.Web.Service.IService;
 using ShoppingApplication.Web.Utility;
 
-
-// implement the API end point related to the CouponService
-
-
-
 namespace ShoppingApplication.Web.Service
 {
-    public class CouponService: ICouponService
+    public class CouponService : ICouponService
     {
         private readonly IBaseService _baseService;
         public CouponService(IBaseService baseService)
@@ -73,6 +67,5 @@ namespace ShoppingApplication.Web.Service
                 Url = SD.CouponAPIBase + "/api/coupon"
             });
         }
-
     }
 }

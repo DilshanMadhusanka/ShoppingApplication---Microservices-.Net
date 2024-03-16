@@ -1,12 +1,7 @@
-﻿namespace ShoppingApplication.Services.Web.Models.Dto
+﻿namespace ShoppingApplication.Web.Models
 {
 
-    // me class ekam services walath hadal thiynawa. ekata hethuwa microservices use kran nisa projects hadanne wena wenam. me project eke ekam solution eke haduwanat 
-    // wena ekak ehema haden nathi wenn puluwan e nisa thamai front end eketh ekam response class ekak thiya ganne 
-
-
-
-    //  API eka call krankot response eka ganna 
+    //  API responce result display krann hadan ekak 
     public class ResponseDto
     {
         public object? Result { get; set; }  // result eka mokkd 

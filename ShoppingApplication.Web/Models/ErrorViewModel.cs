@@ -1,4 +1,4 @@
-namespace ShoppingApplication.WebNew.Models
+namespace ShoppingApplication.Web.Models
 {
     public class ErrorViewModel
     {

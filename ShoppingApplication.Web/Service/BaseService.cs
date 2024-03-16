@@ -1,31 +1,22 @@
-﻿using ShoppingApplication.Web.Models;
+﻿using Newtonsoft.Json;
+using ShoppingApplication.Web.Models;
+using ShoppingApplication.Web.Models;
 using ShoppingApplication.Web.Service.IService;
-using static ShoppingApplication.Web.Utility.SD;
-using System.Net.Mime;
 using System.Net;
 using System.Text;
-using ShoppingApplication.Services.Web.Models.Dto;
-using Newtonsoft.Json;
-
-
-// base implemetnation of the all the services 
-// GET,PUT ,POST, DELETE  method poduwe define karana thana 
-
-
-
+using static ShoppingApplication.Web.Utility.SD;
 
 namespace ShoppingApplication.Web.Service
 {
-
-    // To implement the interface
     public class BaseService : IBaseService
     {
+
         private readonly IHttpClientFactory _httpClientFactory;
-      //  private readonly ITokenProvider _tokenProvider;
+        //  private readonly ITokenProvider _tokenProvider;
         public BaseService(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
-           // _tokenProvider = tokenProvider;
+            // _tokenProvider = tokenProvider;
         }
 
         public async Task<ResponseDto?> SendAsync(RequestDto requestDto)
@@ -35,14 +26,16 @@ namespace ShoppingApplication.Web.Service
                 HttpClient client = _httpClientFactory.CreateClient("MangoAPI");
                 HttpRequestMessage message = new();
                 message.Headers.Add("Accept", "application/json");
-                
+
                 //token
-               
-                    if (requestDto.Data != null)
-                    {
-                        message.Content = new StringContent(JsonConvert.SerializeObject(requestDto.Data), Encoding.UTF8, "application/json");
-                    }
-     
+
+                message.RequestUri = new Uri(requestDto.Url);
+
+                if (requestDto.Data != null)
+                {
+                    message.Content = new StringContent(JsonConvert.SerializeObject(requestDto.Data), Encoding.UTF8, "application/json");
+                }
+
 
                 HttpResponseMessage? apiResponse = null;
 

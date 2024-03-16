@@ -1,10 +1,10 @@
-﻿using ShoppingApplication.Services.Web.Models.Dto;
-using System.Threading.Tasks;
+﻿using ShoppingApplication.Web.Models;
 
 namespace ShoppingApplication.Web.Service.IService
 {
     public interface ICouponService
     {
+
         Task<ResponseDto?> GetCouponAsync(string couponCode);
         Task<ResponseDto?> GetAllCouponsAsync();
         Task<ResponseDto?> GetCouponByIdAsync(int id);

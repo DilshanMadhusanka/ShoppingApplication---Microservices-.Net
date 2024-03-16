@@ -1,5 +1,5 @@
-using ShoppingApplication.Web.Service.IService;
 using ShoppingApplication.Web.Service;
+using ShoppingApplication.Web.Service.IService;
 using ShoppingApplication.Web.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 
+//-----------------------------------------------
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 builder.Services.AddHttpClient<ICouponService, CouponService>();
@@ -17,6 +18,10 @@ SD.CouponAPIBase = builder.Configuration["ServiceUrls:CouponAPI"];
 builder.Services.AddScoped<IBaseService, BaseService>();
 builder.Services.AddScoped<ICouponService, CouponService>();
 
+
+
+
+//-------------------------------------------------
 
 var app = builder.Build();
 
