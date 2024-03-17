@@ -1,3 +1,8 @@
+// https://github.com/bhrugen/Mango_Microservices/blob/master/Mango.Web/Views/Coupon/CouponIndex.cshtml
+
+
+
+
 using ShoppingApplication.Web.Service;
 using ShoppingApplication.Web.Service.IService;
 using ShoppingApplication.Web.Utility;
@@ -9,6 +14,7 @@ builder.Services.AddControllersWithViews();
 
 
 //-----------------------------------------------
+//builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 builder.Services.AddHttpClient<ICouponService, CouponService>();
