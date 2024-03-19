@@ -25,12 +25,12 @@ namespace ShoppingApplication.Web.Controllers
             {
                 list = JsonConvert.DeserializeObject<List<CouponDto>>(Convert.ToString(response.Result));
             }
-            /*
+           
             else
             {
                 TempData["error"] = response?.Message;
             }
-            */
+            
 
             return View(list);
 
@@ -55,12 +55,12 @@ namespace ShoppingApplication.Web.Controllers
 					TempData["success"] = "Coupon created successfully";
 					return RedirectToAction(nameof(CouponIndex));
 				}
-				/*
+			
 				 else
 				{
 					TempData["error"] = response?.Message;
 				}
-                */
+                
 			}
 			return View(model);
 		}
