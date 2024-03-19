@@ -22,7 +22,7 @@ namespace ShoppingApplication.Webb.Service
         {
             try
             {
-                HttpClient client = _httpClientFactory.CreateClient("CouponAPI");
+                HttpClient client = _httpClientFactory.CreateClient("Shopping");
                 HttpRequestMessage message = new();
                 message.Headers.Add("Accept", "application/json");
 

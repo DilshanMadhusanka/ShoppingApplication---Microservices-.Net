@@ -1,4 +1,6 @@
-﻿namespace ShoppingApplication.Webb.Service.IService
+﻿using ShoppingApplication.Webb.Models;
+
+namespace ShoppingApplication.Webb.Service.IService
 {
     public interface ICouponService
     {
@@ -8,6 +10,6 @@
         Task<ResponseDto?> GetCouponByIdAsync(int id);
         Task<ResponseDto?> CreateCouponsAsync(CouponDto couponDto);
         Task<ResponseDto?> UpdateCouponsAsync(CouponDto couponDto);
-        Task<ResponseDto?> DeleteCouponsAsync(int id);
+        Task<ResponseDto?> DleteCouponsAsync(int id);
     }
 }
