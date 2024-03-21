@@ -42,7 +42,7 @@ namespace ShoppingApplication.Webb.Service
             {
                 ApiType = SD.ApiType.GET,
                 Url = SD.CouponAPIBase + "/api/coupon"
-            });
+			});
         }
 
         public async Task<ResponseDto?> GetCouponAsync(string couponCode)
