@@ -25,8 +25,8 @@ namespace ShoppingApplication.Webb.Controllers
                 list = JsonConvert.DeserializeObject<List<CouponDto>>(Convert.ToString(response.Result));
             }
 
-         
 
+            Console.WriteLine(list);
             return View(list);
 
         }

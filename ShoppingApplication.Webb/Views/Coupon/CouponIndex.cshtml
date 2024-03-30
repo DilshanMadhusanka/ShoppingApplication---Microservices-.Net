@@ -1,4 +1,8 @@
 ﻿@model IEnumerable<CouponDto>
+@* @model List<CouponDto> *@
+<p>@Model.Count()</p>
+@* <p>@Model.</p> *@
+
 
 <div class="card shadow border-0 mt-4">
 	<div class="card-header bg-secondary bg-gradient ml-0 py-3">
@@ -34,12 +38,16 @@
 			</thead>
 
 			<tbody>
+				@foreach (var itm in Model)
+				{
+					@itm.CouponId
+				}
 
 				
 					<tr>
 						<td>
 							
-
+							
 						</td>
 						<td>
 							
