@@ -1,5 +1,6 @@
 ﻿namespace ShoppingApplication.Services.CouponAPI.Models.Dto
 {
+    // front end ekat dena attributes tika 
     public class CouponDto
     {
         public int CouponId { get; set; }

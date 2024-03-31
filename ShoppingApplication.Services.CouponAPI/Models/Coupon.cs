@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace ShoppingApplication.Services.CouponAPI.Models
-{
+{ 
+    // coupon class 
     public class Coupon
     {
         [Key]
